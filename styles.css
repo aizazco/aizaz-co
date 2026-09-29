@@ -127,7 +127,7 @@ a:focus-visible, .btn:focus-visible { outline: 3px solid var(--yellow); outline-
   .hero-photo { max-width: 520px; }
   .grid-3 { grid-template-columns: 1fr; }
   .about-grid { grid-template-columns: 1fr; }
-  .nav nav a:not(.btn) { display: none; }
+  .nav nav a:not(.btn):not(.social) { display: none; }
 }
 @media (max-width: 560px) {
   .grid-4 { grid-template-columns: 1fr; }
@@ -138,4 +138,19 @@ a:focus-visible, .btn:focus-visible { outline: 3px solid var(--yellow); outline-
 @media (prefers-reduced-motion: reduce) {
   html { scroll-behavior: auto; }
   .btn { transition: none; }
+}
+
+/* Social */
+.social { display: inline-flex; align-items: center; justify-content: center; width: 44px; height: 44px; border-radius: 50%; color: #DADAD5; transition: color .15s ease, background .15s ease; }
+.social:hover { color: var(--black); background: var(--yellow); }
+.footer-links { display: inline-flex; align-items: center; gap: 12px; }
+.footer .social { color: var(--on-dark-3); width: 40px; height: 40px; }
+.footer .social:hover { color: var(--black); }
+.btn { white-space: nowrap; }
+.footer-row { align-items: center; }
+@media (max-width: 420px) {
+  .nav { gap: 12px; }
+  .nav nav { gap: 8px; }
+  .wordmark { font-size: 20px; }
+  .btn-sm { padding: 10px 16px; font-size: 15px; }
 }

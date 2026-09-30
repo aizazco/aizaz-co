@@ -50,7 +50,7 @@
     <a href="#thinking">Thinking</a>
     <a href="#about">About</a>
     <a class="social" href="https://www.linkedin.com/in/aizazsheikh/" target="_blank" rel="noopener" aria-label="Aizaz Sheikh on LinkedIn"><svg aria-hidden="true" viewBox="0 0 24 24" width="22" height="22" fill="currentColor"><path d="M20.45 20.45h-3.56v-5.57c0-1.33-.02-3.04-1.85-3.04-1.85 0-2.14 1.45-2.14 2.94v5.67H9.35V9h3.41v1.56h.05c.48-.9 1.64-1.85 3.37-1.85 3.6 0 4.27 2.37 4.27 5.46v6.28zM5.34 7.43a2.06 2.06 0 1 1 0-4.13 2.06 2.06 0 0 1 0 4.13zM7.12 20.45H3.56V9h3.56v11.45zM22.22 0H1.77C.79 0 0 .77 0 1.73v20.54C0 23.23.79 24 1.77 24h20.45c.98 0 1.78-.77 1.78-1.73V1.73C24 .77 23.2 0 22.22 0z"/></svg></a>
-    <a class="btn btn-yellow btn-sm" href="#contact">Book a call</a>
+    <a class="btn btn-yellow btn-sm" href="#contact" data-enquiry="Advisory">Book a call</a>
   </nav>
 </header>
 
@@ -133,7 +133,7 @@
       </article>
     </div>
     <div class="actions">
-      <a class="btn btn-yellow" href="mailto:aizaz.sheikh@me.com?subject=Keynote%20enquiry">Check availability</a>
+      <a class="btn btn-yellow" href="#contact" data-enquiry="Keynote">Check availability</a>
       <span class="muted">Keynotes, workshops and panels.</span>
     </div>
   </div>
@@ -167,7 +167,7 @@
       </li>
     </ol>
     <div class="actions">
-      <a class="btn btn-dark" href="mailto:aizaz.sheikh@me.com?subject=Distance%20Audit">Start with a Distance Audit</a>
+      <a class="btn btn-dark" href="#contact" data-enquiry="Advisory">Start with a Distance Audit</a>
     </div>
   </div>
 </section>
@@ -213,14 +213,56 @@
 </section>
 
 <section id="contact" class="dark">
-  <div class="wrap section center">
-    <h2 class="cta">Let's make your brand the one they choose.</h2>
-    <p class="lead">Keynotes, workshops and advisory for travel brands and destinations.</p>
-    <div class="actions center">
-      <a class="btn btn-yellow" href="mailto:aizaz.sheikh@me.com?subject=Let%27s%20talk">Book a call</a>
-      <a class="btn btn-ghost" href="mailto:aizaz.sheikh@me.com?subject=Keynote%20enquiry">Book a keynote</a>
+  <div class="wrap section contact-grid">
+    <div class="contact-copy">
+      <p class="eyebrow on-dark">Get in touch</p>
+      <h2 class="cta">Let's make your brand the one they choose.</h2>
+      <p class="lead">Keynotes, workshops and advisory for travel brands and destinations. Tell me a little about what you need and I'll come back to you within two business days.</p>
+      <p class="muted">Prefer email? <a class="plain" href="mailto:aizaz.sheikh@me.com">aizaz.sheikh@me.com</a></p>
     </div>
-    <p class="muted"><a class="plain" href="mailto:aizaz.sheikh@me.com">aizaz.sheikh@me.com</a></p>
+    <form class="enquiry" name="enquiry" method="POST" action="/thanks/" data-netlify="true" netlify-honeypot="bot-field">
+      <input type="hidden" name="form-name" value="enquiry">
+      <p class="hp"><label>Leave this empty <input name="bot-field" tabindex="-1" autocomplete="off"></label></p>
+
+      <fieldset class="choice">
+        <legend>What can I help with?</legend>
+        <label><input type="radio" name="enquiry-type" value="Keynote" required> Keynote or workshop</label>
+        <label><input type="radio" name="enquiry-type" value="Advisory"> Advisory or Distance Audit</label>
+        <label><input type="radio" name="enquiry-type" value="Something else"> Something else</label>
+      </fieldset>
+
+      <div class="field-row">
+        <label class="field">Name<input type="text" name="name" autocomplete="name" required></label>
+        <label class="field">Email<input type="email" name="email" autocomplete="email" required></label>
+      </div>
+      <div class="field-row">
+        <label class="field">Organization<input type="text" name="organization" autocomplete="organization" required></label>
+        <label class="field">Your role<input type="text" name="role" autocomplete="organization-title"></label>
+      </div>
+
+      <div class="keynote-fields" data-show-for="Keynote">
+        <div class="field-row">
+          <label class="field">Event name<input type="text" name="event-name"></label>
+          <label class="field">Event date<input type="text" name="event-date" placeholder="e.g. May 2027"></label>
+        </div>
+        <div class="field-row">
+          <label class="field">Location<input type="text" name="event-location" placeholder="City, or virtual"></label>
+          <label class="field">Audience size
+            <select name="audience-size">
+              <option value="">Select</option>
+              <option>Under 100</option>
+              <option>100 to 500</option>
+              <option>500 to 1,000</option>
+              <option>Over 1,000</option>
+            </select>
+          </label>
+        </div>
+      </div>
+
+      <label class="field">Tell me a bit more<textarea name="message" rows="5" required></textarea></label>
+
+      <button class="btn btn-yellow" type="submit">Send enquiry</button>
+    </form>
   </div>
 </section>
 
@@ -233,5 +275,24 @@
   </div>
 </footer>
 
+<script>
+(function () {
+  var form = document.querySelector('.enquiry');
+  if (!form) return;
+  var extra = form.querySelector('.keynote-fields');
+  function sync() {
+    var picked = form.querySelector('input[name="enquiry-type"]:checked');
+    extra.hidden = !(picked && picked.value === 'Keynote');
+  }
+  form.addEventListener('change', sync);
+  document.querySelectorAll('[data-enquiry]').forEach(function (a) {
+    a.addEventListener('click', function () {
+      var r = form.querySelector('input[name="enquiry-type"][value="' + a.dataset.enquiry + '"]');
+      if (r) { r.checked = true; sync(); }
+    });
+  });
+  sync();
+})();
+</script>
 </body>
 </html>

@@ -178,3 +178,5 @@ a:focus-visible, .btn:focus-visible { outline: 3px solid var(--yellow); outline-
 @media (max-width: 900px) { .contact-grid { grid-template-columns: 1fr; } }
 @media (max-width: 560px) { .field-row { grid-template-columns: 1fr; } }
 .thanks { min-height: 60vh; justify-content: center; }
+.req { color: var(--yellow); font-weight: 700; }
+.req-note { margin: -4px 0 0; font-size: 14px; color: var(--on-dark-3); }

@@ -220,9 +220,12 @@
       <p class="lead">Keynotes, workshops and advisory for travel brands and destinations. Tell me a little about what you need and I'll come back to you within two business days.</p>
       <p class="muted">Prefer email? <a class="plain" href="mailto:aizaz.sheikh@me.com">aizaz.sheikh@me.com</a></p>
     </div>
-    <form class="enquiry" name="enquiry" method="POST" action="/thanks/" data-netlify="true" netlify-honeypot="bot-field">
-      <input type="hidden" name="form-name" value="enquiry">
-      <p class="hp"><label>Leave this empty <input name="bot-field" tabindex="-1" autocomplete="off"></label></p>
+    <form class="enquiry" name="enquiry" method="POST" action="https://api.web3forms.com/submit">
+      <input type="hidden" name="access_key" value="47be2bea-a69e-455f-8de6-35985d32a48c">
+      <input type="hidden" name="subject" value="New enquiry from aizaz.co">
+      <input type="hidden" name="from_name" value="aizaz.co">
+      <input type="hidden" name="redirect" value="https://aizaz.co/thanks/">
+      <input type="checkbox" name="botcheck" class="hp" tabindex="-1" autocomplete="off" aria-hidden="true">
 
       <fieldset class="choice">
         <legend>What can I help with?</legend>

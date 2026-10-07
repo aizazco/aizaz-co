@@ -200,3 +200,15 @@ a:focus-visible, .btn:focus-visible { outline: 3px solid var(--yellow); outline-
   .marquee-list { flex-wrap: wrap; white-space: normal; gap: 16px 48px; padding: 0 var(--pad); }
   .marquee-list[aria-hidden="true"] { display: none; }
 }
+
+/* Start Here */
+.grid-2 { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 24px; margin-top: 20px; }
+.start .card { gap: 16px; }
+.start .card .btn { align-self: flex-start; margin-top: auto; }
+.start .card p:not(.label) { margin-bottom: 12px; }
+.start .card-dark p:not(.label) { color: var(--on-dark-2); }
+.start-note { font-size: 16px; color: var(--ink-2); }
+@media (max-width: 900px) { .grid-2 { grid-template-columns: 1fr; } }
+@media (max-width: 560px) { .start .card .btn { align-self: stretch; } }
+.nav nav a { white-space: nowrap; }
+@media (max-width: 1080px) { .nav nav a:not(.btn):not(.social) { display: none; } }

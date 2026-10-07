@@ -146,11 +146,13 @@ a:focus-visible, .btn:focus-visible { outline: 3px solid var(--yellow); outline-
 .footer-links { display: inline-flex; align-items: center; gap: 12px; }
 .footer .social { color: var(--on-dark-3); width: 40px; height: 40px; }
 .footer .social:hover { color: var(--black); }
+.nav nav .social + .social { margin-left: calc(8px - clamp(16px, 3vw, 40px)); }
 .btn { white-space: nowrap; }
 .footer-row { align-items: center; }
 @media (max-width: 420px) {
   .nav { gap: 12px; }
   .nav nav { gap: 8px; }
+  .nav nav .social + .social { margin-left: -4px; }
   .wordmark { font-size: 20px; }
   .btn-sm { padding: 10px 16px; font-size: 15px; }
 }

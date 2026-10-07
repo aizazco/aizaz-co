@@ -212,3 +212,5 @@ a:focus-visible, .btn:focus-visible { outline: 3px solid var(--yellow); outline-
 @media (max-width: 560px) { .start .card .btn { align-self: stretch; } }
 .nav nav a { white-space: nowrap; }
 @media (max-width: 1080px) { .nav nav a:not(.btn):not(.social) { display: none; } }
+.footer-text { color: var(--on-dark-3); text-decoration: none; padding: 10px 4px; }
+.footer-text:hover { color: var(--yellow); }

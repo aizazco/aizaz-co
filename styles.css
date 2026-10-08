@@ -110,6 +110,10 @@ h3.essay { font-size: clamp(24px, 2.2vw, 30px); }
 .facts { list-style: none; margin: 0; padding: 0; display: flex; flex-direction: column; }
 .facts li { display: flex; flex-direction: column; gap: 4px; padding: 18px 0; border-top: 1px solid #D5D4CD; font-size: 19px; font-weight: 600; }
 .facts li:last-child { border-bottom: 1px solid #D5D4CD; }
+.facts .cred + .cred { margin-top: 10px; }
+.facts .cred em { display: block; font-style: normal; font-weight: 400; font-size: 16px; color: var(--ink-2); }
+.facts .cred a { color: inherit; text-decoration: underline; text-underline-offset: 3px; }
+.facts .cred a:hover { background: var(--yellow); color: var(--black); }
 .facts span { font-size: 13px; font-weight: 700; letter-spacing: 2px; text-transform: uppercase; color: var(--ink-2); }
 
 /* Footer */

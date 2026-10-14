@@ -57,7 +57,7 @@ a { color: inherit; }
 
 /* Type */
 .eyebrow { align-self: flex-start; font-size: 15px; font-weight: 700; letter-spacing: 3px; text-transform: uppercase; background: var(--yellow); color: var(--black); padding: 6px 12px; border-radius: 6px; }
-.eyebrow.on-dark { background: none; color: var(--yellow); padding: 0; }
+.hl { background: var(--yellow); color: var(--black); padding: 0 .14em .04em; border-radius: 4px; -webkit-box-decoration-break: clone; box-decoration-break: clone; }
 h1 { font-size: clamp(48px, 6vw, 84px); line-height: 1.02; letter-spacing: -1px; }
 h2 { font-size: clamp(38px, 4.5vw, 64px); line-height: 1.1; }
 h2.wide { max-width: 1080px; }

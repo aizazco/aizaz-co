@@ -202,6 +202,7 @@ a:focus-visible, .btn:focus-visible { outline: 3px solid var(--yellow); outline-
 .marquee-list .logo-tourradar img { height: 30px; }
 .marquee-list .logo-atta img { height: 48px; }
 .marquee-list .logo-tc img { height: 50px; }
+.marquee-list .logo-ago img { height: 32px; }
 @keyframes marquee { from { transform: translateX(0); } to { transform: translateX(-50%); } }
 @media (prefers-reduced-motion: reduce) {
   .marquee { -webkit-mask-image: none; mask-image: none; }

@@ -240,12 +240,12 @@ a:focus-visible, .btn:focus-visible { outline: 3px solid var(--yellow); outline-
 /* Speaking history */
 .speaking { margin-top: clamp(48px, 5vw, 72px); }
 .speaking-title { font-size: clamp(26px, 2.2vw, 32px); color: var(--paper); margin-bottom: 20px; }
-.speaking-list { list-style: none; margin: 0; padding: 0; display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); column-gap: 48px; grid-template-rows: repeat(5, auto); grid-auto-flow: column; }
-.speaking-list li:nth-child(1), .speaking-list li:nth-child(6) { border-top: 1px solid var(--line-dark); }
+.speaking-list { list-style: none; margin: 0; padding: 0; display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); column-gap: 48px; grid-template-rows: repeat(var(--rows, 5), auto); grid-auto-flow: column; }
+.speaking-list li:first-child, .speaking-list li.col2 { border-top: 1px solid var(--line-dark); }
 .speaking-list li { display: grid; grid-template-columns: 56px minmax(0, 1fr); column-gap: 16px; row-gap: 2px; padding: 16px 0; border-bottom: 1px solid var(--line-dark); }
 .speaking-list .yr { grid-row: span 2; font-weight: 700; font-size: 16px; color: var(--yellow); padding-top: 2px; }
 .speaking-list .ev { font-size: 17px; font-weight: 500; color: var(--paper); }
 .speaking-list .tt { font-family: var(--serif); font-style: italic; font-size: 18px; color: var(--on-dark-2); }
 .speaking-list .kind { font-style: normal; font-size: 12px; font-weight: 700; letter-spacing: 1.5px; text-transform: uppercase; color: var(--black); background: var(--yellow); border-radius: 4px; padding: 2px 6px; margin-left: 8px; vertical-align: 2px; }
 #keynotes .speaking + .actions { margin-top: 40px; }
-@media (max-width: 900px) { .speaking-list { grid-template-columns: 1fr; grid-template-rows: none; grid-auto-flow: row; } .speaking-list li:nth-child(6) { border-top: 0; } }
+@media (max-width: 900px) { .speaking-list { grid-template-columns: 1fr; grid-template-rows: none; grid-auto-flow: row; } .speaking-list li.col2 { border-top: 0; } }

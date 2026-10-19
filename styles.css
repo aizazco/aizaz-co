@@ -203,6 +203,7 @@ a:focus-visible, .btn:focus-visible { outline: 3px solid var(--yellow); outline-
 .marquee-list .logo-atta img { height: 48px; }
 .marquee-list .logo-tc img { height: 50px; }
 .marquee-list .logo-ago img { height: 32px; }
+.marquee-list .logo-aaa img { height: 46px; }
 @keyframes marquee { from { transform: translateX(0); } to { transform: translateX(-50%); } }
 @media (prefers-reduced-motion: reduce) {
   .marquee { -webkit-mask-image: none; mask-image: none; }

@@ -356,6 +356,11 @@
       if (r) { r.checked = true; sync(); }
     });
   });
+  var pre = new URLSearchParams(location.search).get('enquiry');
+  if (pre) {
+    var p = form.querySelector('input[name="enquiry-type"][value="' + pre.replace(/[^A-Za-z ]/g, '') + '"]');
+    if (p) p.checked = true;
+  }
   sync();
 })();
 </script>
